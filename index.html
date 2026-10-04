@@ -13,6 +13,10 @@
 
 <style>
 
+/* =========================================
+   НЕГИЗГИ
+========================================= */
+
 *{
     margin:0;
     padding:0;
@@ -39,13 +43,175 @@ button{
     font-family:inherit;
 }
 
-/* ==============================
-   АЧЫЛГАНДАГЫ БЕТ
-============================== */
+
+/* =========================================
+   КЫРГЫЗ ОЙМО ЧИЙМЕЛЕРИ
+========================================= */
+
+.ornament-top,
+.ornament-bottom{
+    width:100%;
+    height:32px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 25%,
+            #a17b4b 25%,
+            #a17b4b 35%,
+            transparent 35%,
+            transparent 50%,
+            #a17b4b 50%,
+            #a17b4b 60%,
+            transparent 60%
+        );
+
+    background-size:42px 42px;
+
+    opacity:.5;
+}
+
+.ornament-top{
+    border-bottom:1px solid #b99a70;
+}
+
+.ornament-bottom{
+    border-top:1px solid #b99a70;
+}
+
+
+/* =========================================
+   ТҮШҮП ТУРГАН ЖҮРӨКТӨР
+========================================= */
+
+.hearts{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5000;
+}
+
+.heart{
+    position:absolute;
+
+    top:-50px;
+
+    color:#b88962;
+
+    font-size:18px;
+
+    opacity:.55;
+
+    animation:
+        fallHeart linear forwards;
+
+    filter:drop-shadow(
+        0 2px 4px rgba(120,80,40,.12)
+    );
+}
+
+.heart:nth-child(1){
+    left:5%;
+    animation-duration:8s;
+    animation-delay:0s;
+    font-size:15px;
+}
+
+.heart:nth-child(2){
+    left:15%;
+    animation-duration:10s;
+    animation-delay:2s;
+    font-size:21px;
+}
+
+.heart:nth-child(3){
+    left:27%;
+    animation-duration:7s;
+    animation-delay:4s;
+    font-size:13px;
+}
+
+.heart:nth-child(4){
+    left:39%;
+    animation-duration:11s;
+    animation-delay:1s;
+    font-size:18px;
+}
+
+.heart:nth-child(5){
+    left:52%;
+    animation-duration:8s;
+    animation-delay:5s;
+    font-size:14px;
+}
+
+.heart:nth-child(6){
+    left:65%;
+    animation-duration:10s;
+    animation-delay:3s;
+    font-size:20px;
+}
+
+.heart:nth-child(7){
+    left:77%;
+    animation-duration:7s;
+    animation-delay:6s;
+    font-size:15px;
+}
+
+.heart:nth-child(8){
+    left:90%;
+    animation-duration:9s;
+    animation-delay:2s;
+    font-size:19px;
+}
+
+@keyframes fallHeart{
+
+    0%{
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.55;
+    }
+
+    50%{
+        transform:
+            translateY(55vh)
+            translateX(25px)
+            rotate(180deg);
+    }
+
+    100%{
+        transform:
+            translateY(115vh)
+            translateX(-35px)
+            rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================================
+   OPENING
+========================================= */
 
 .opening{
     position:fixed;
     inset:0;
+
     z-index:99999;
 
     display:flex;
@@ -63,6 +229,8 @@ button{
         );
 
     transition:1s ease;
+
+    overflow:hidden;
 }
 
 .opening.hide{
@@ -74,32 +242,60 @@ button{
 .opening-inner{
     width:90%;
     max-width:450px;
+
+    position:relative;
+}
+
+.opening-inner:before,
+.opening-inner:after{
+
+    content:"❧  ❧  ❧";
+
+    display:block;
+
+    color:#a17b4b;
+
+    font-size:25px;
+
+    letter-spacing:12px;
+
+    margin:15px 0;
 }
 
 .opening-ornament{
-    font-size:40px;
+    font-size:45px;
     color:#b08a55;
-    margin-bottom:20px;
+
+    margin-bottom:15px;
 }
 
 .opening-small{
     font-size:11px;
+
     letter-spacing:5px;
+
     color:#96784f;
+
     margin-bottom:15px;
 }
 
 .opening-name{
     font-family:'Great Vibes',cursive;
+
     font-size:78px;
+
     color:#8d6b42;
+
     line-height:1;
 }
 
 .opening-title{
     font-family:'Cormorant Garamond',serif;
+
     font-size:24px;
+
     letter-spacing:5px;
+
     margin-top:20px;
 }
 
@@ -109,12 +305,15 @@ button{
     padding:17px 32px;
 
     border:1px solid #b08a55;
+
     border-radius:50px;
 
     background:transparent;
+
     color:#80613e;
 
     letter-spacing:3px;
+
     font-size:11px;
 
     cursor:pointer;
@@ -128,9 +327,9 @@ button{
 }
 
 
-/* ==============================
-   МУЗЫКА
-============================== */
+/* =========================================
+   MUSIC
+========================================= */
 
 .music-button{
     position:fixed;
@@ -154,11 +353,13 @@ button{
 
     cursor:pointer;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.2);
 }
 
 .music-button.active{
-    animation:rotateMusic 3s linear infinite;
+    animation:
+        rotateMusic 3s linear infinite;
 }
 
 @keyframes rotateMusic{
@@ -174,9 +375,9 @@ button{
 }
 
 
-/* ==============================
+/* =========================================
    HERO
-============================== */
+========================================= */
 
 .hero{
     min-height:100vh;
@@ -193,6 +394,8 @@ button{
             #fffdf9,
             #efe1d0
         );
+
+    position:relative;
 }
 
 .hero-inner{
@@ -221,6 +424,26 @@ button{
     box-shadow:
         0 25px 60px
         rgba(72,52,30,.2);
+
+    position:relative;
+}
+
+.hero-photo:after{
+    content:"";
+    position:absolute;
+    inset:8px;
+
+    border:
+        1px solid
+        rgba(170,135,88,.55);
+
+    border-radius:
+        210px
+        210px
+        18px
+        18px;
+
+    pointer-events:none;
 }
 
 .hero-photo img{
@@ -230,13 +453,17 @@ button{
 
 .hero-small{
     font-size:11px;
+
     letter-spacing:6px;
+
     color:#98764b;
 }
 
 .hero-name{
     font-family:'Great Vibes',cursive;
+
     font-size:82px;
+
     color:#8d6b42;
 
     line-height:1;
@@ -255,12 +482,14 @@ button{
 }
 
 
-/* ==============================
-   ЖАЛПЫ SECTION
-============================== */
+/* =========================================
+   SECTION
+========================================= */
 
 section{
     padding:85px 20px;
+
+    position:relative;
 }
 
 .container{
@@ -272,6 +501,7 @@ section{
     text-align:center;
 
     font-size:10px;
+
     letter-spacing:4px;
 
     color:#a08561;
@@ -292,9 +522,9 @@ section{
 }
 
 
-/* ==============================
-   ЧАКЫРУУ
-============================== */
+/* =========================================
+   INVITATION
+========================================= */
 
 .invitation{
     background:#fffaf4;
@@ -319,9 +549,9 @@ section{
 }
 
 
-/* ==============================
-   СҮРӨТ
-============================== */
+/* =========================================
+   PHOTO
+========================================= */
 
 .feature-photo{
     max-width:600px;
@@ -335,20 +565,47 @@ section{
     box-shadow:
         0 20px 50px
         rgba(73,54,35,.18);
+
+    border:5px solid #fff;
+
+    position:relative;
+}
+
+.feature-photo:after{
+
+    content:"❧  ❦  ❧";
+
+    position:absolute;
+
+    bottom:12px;
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:25px;
+
+    text-shadow:
+        0 2px 8px #4c3724;
+
 }
 
 .feature-photo img{
     height:650px;
+
     object-fit:cover;
 }
 
 
-/* ==============================
+/* =========================================
    DATE
-============================== */
+========================================= */
 
 .date-section{
     background:#f1e5d5;
+
     text-align:center;
 }
 
@@ -414,13 +671,14 @@ section{
 
 .count small{
     font-size:8px;
+
     letter-spacing:1px;
 }
 
 
-/* ==============================
-   ДАРЕК
-============================== */
+/* =========================================
+   LOCATION
+========================================= */
 
 .location{
     text-align:center;
@@ -457,9 +715,9 @@ section{
 }
 
 
-/* ==============================
-   ПРОГРАММА
-============================== */
+/* =========================================
+   PROGRAM
+========================================= */
 
 .program{
     background:#f8f0e5;
@@ -506,9 +764,9 @@ section{
 }
 
 
-/* ==============================
-   ГАЛЕРЕЯ
-============================== */
+/* =========================================
+   GALLERY
+========================================= */
 
 .gallery{
     background:#fffaf4;
@@ -534,6 +792,28 @@ section{
     background:#eee;
 
     cursor:pointer;
+
+    border:3px solid #fff;
+
+    position:relative;
+}
+
+.gallery-item:after{
+
+    content:"❦";
+
+    position:absolute;
+
+    right:12px;
+    bottom:8px;
+
+    color:white;
+
+    font-size:24px;
+
+    text-shadow:
+        0 2px 6px #000;
+
 }
 
 .gallery-item img{
@@ -559,9 +839,9 @@ section{
 }
 
 
-/* ==============================
+/* =========================================
    LIGHTBOX
-============================== */
+========================================= */
 
 .lightbox{
     position:fixed;
@@ -575,6 +855,7 @@ section{
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
@@ -608,9 +889,9 @@ section{
 }
 
 
-/* ==============================
-   БАТА
-============================== */
+/* =========================================
+   BLESSING
+========================================= */
 
 .blessing{
     min-height:650px;
@@ -628,14 +909,11 @@ section{
             rgba(55,38,22,.52),
             rgba(55,38,22,.52)
         ),
-        center/cover no-repeat;
-
-    background-image:
-        linear-gradient(
-            rgba(55,38,22,.52),
-            rgba(55,38,22,.52)
-        ),
         var(--blessing-photo);
+
+    background-position:center;
+
+    background-size:cover;
 }
 
 .blessing-content{
@@ -661,9 +939,9 @@ section{
 }
 
 
-/* ==============================
-   АТА-ЭНЕ
-============================== */
+/* =========================================
+   PARENTS
+========================================= */
 
 .parents{
     background:#f3e7d7;
@@ -680,9 +958,9 @@ section{
 }
 
 
-/* ==============================
+/* =========================================
    FINAL
-============================== */
+========================================= */
 
 .final{
     min-height:90vh;
@@ -705,6 +983,7 @@ section{
         var(--final-photo);
 
     background-position:center;
+
     background-size:cover;
 }
 
@@ -734,10 +1013,36 @@ section{
     letter-spacing:5px;
 }
 
+.final-owners{
 
-/* ==============================
+    margin-top:35px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+
+    line-height:1.6;
+
+}
+
+.final-owners strong{
+
+    display:block;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    margin-top:5px;
+
+    font-weight:400;
+
+}
+
+
+/* =========================================
    FOOTER
-============================== */
+========================================= */
 
 footer{
     padding:30px 20px;
@@ -754,9 +1059,9 @@ footer{
 }
 
 
-/* ==============================
-   АНИМАЦИЯ
-============================== */
+/* =========================================
+   ANIMATION
+========================================= */
 
 .reveal{
     opacity:0;
@@ -772,11 +1077,6 @@ footer{
     transform:translateY(0);
 }
 
-
-/* ==============================
-   LOADING
-============================== */
-
 .loading{
     text-align:center;
 
@@ -788,34 +1088,9 @@ footer{
 }
 
 
-/* ==============================
-   ERROR
-============================== */
-
-.error-message{
-    display:none;
-
-    max-width:700px;
-
-    margin:20px auto;
-
-    padding:20px;
-
-    border-radius:12px;
-
-    background:#f3dfd7;
-
-    color:#8b493b;
-
-    text-align:center;
-
-    font-size:12px;
-}
-
-
-/* ==============================
+/* =========================================
    MOBILE
-============================== */
+========================================= */
 
 @media(max-width:600px){
 
@@ -872,6 +1147,35 @@ footer{
         font-size:70px;
     }
 
+    .final-owners strong{
+        font-size:42px;
+    }
+
+}
+
+
+/* =========================================
+   КИЧИНЕКЕЙ ТЕЛЕФОН
+========================================= */
+
+@media(max-width:380px){
+
+    .hero-name{
+        font-size:62px;
+    }
+
+    .opening-name{
+        font-size:58px;
+    }
+
+    .date-number{
+        font-size:75px;
+    }
+
+    .count{
+        width:70px;
+    }
+
 }
 
 </style>
@@ -881,13 +1185,33 @@ footer{
 <body>
 
 
-<!-- ==================================
-     OPENING
-================================== -->
+<!-- =========================================
+     ТҮШҮП ТУРГАН ЖҮРӨКТӨР
+========================================= -->
+
+<div class="hearts">
+
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+
+</div>
+
+
+<!-- =========================================
+     АЧЫЛГАНДАГЫ БЕТ
+========================================= -->
 
 <div class="opening" id="opening">
 
     <div class="opening-inner">
+
+        <div class="ornament-top"></div>
 
         <div class="opening-ornament">
             ❦
@@ -912,14 +1236,16 @@ footer{
             ЧАКЫРУУНУ АЧУУ
         </button>
 
+        <div class="ornament-bottom"></div>
+
     </div>
 
 </div>
 
 
-<!-- ==================================
+<!-- =========================================
      MUSIC
-================================== -->
+========================================= -->
 
 <audio
     id="music"
@@ -937,9 +1263,9 @@ footer{
 </button>
 
 
-<!-- ==================================
+<!-- =========================================
      HERO
-================================== -->
+========================================= -->
 
 <section class="hero">
 
@@ -949,9 +1275,11 @@ footer{
             class="hero-photo reveal"
             id="heroPhoto"
         >
+
             <div class="loading">
                 Сүрөт жүктөлүүдө...
             </div>
+
         </div>
 
         <div class="hero-small">
@@ -971,16 +1299,18 @@ footer{
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      INVITATION
-================================== -->
+========================================= -->
 
 <section class="invitation">
+
+    <div class="ornament-top"></div>
 
     <div class="container reveal">
 
         <div class="section-small">
-            КЫМБАТТУУ КОНАКТАР!
+            КЫМБАТТУУ КОНОКТОР!
         </div>
 
         <h2 class="section-title">
@@ -1005,12 +1335,14 @@ footer{
 
     </div>
 
+    <div class="ornament-bottom"></div>
+
 </section>
 
 
-<!-- ==================================
-     SECOND PHOTO
-================================== -->
+<!-- =========================================
+     PHOTO
+========================================= -->
 
 <section>
 
@@ -1018,19 +1350,23 @@ footer{
         class="feature-photo reveal"
         id="featurePhoto"
     >
+
         <div class="loading">
             Сүрөт жүктөлүүдө...
         </div>
+
     </div>
 
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      DATE
-================================== -->
+========================================= -->
 
 <section class="date-section">
+
+    <div class="ornament-top"></div>
 
     <div class="container reveal">
 
@@ -1077,12 +1413,14 @@ footer{
 
     </div>
 
+    <div class="ornament-bottom"></div>
+
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      LOCATION
-================================== -->
+========================================= -->
 
 <section class="location">
 
@@ -1117,9 +1455,9 @@ footer{
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      PROGRAM
-================================== -->
+========================================= -->
 
 <section class="program">
 
@@ -1226,9 +1564,9 @@ footer{
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      GALLERY
-================================== -->
+========================================= -->
 
 <section class="gallery">
 
@@ -1259,9 +1597,9 @@ footer{
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      LIGHTBOX
-================================== -->
+========================================= -->
 
 <div
     class="lightbox"
@@ -1285,9 +1623,9 @@ footer{
 </div>
 
 
-<!-- ==================================
+<!-- =========================================
      BLESSING
-================================== -->
+========================================= -->
 
 <section
     class="blessing"
@@ -1326,9 +1664,9 @@ footer{
 </section>
 
 
-<!-- ==================================
-     PARENTS
-================================== -->
+<!-- =========================================
+     АТА-ЭНЕ
+========================================= -->
 
 <section class="parents">
 
@@ -1351,9 +1689,9 @@ footer{
 </section>
 
 
-<!-- ==================================
+<!-- =========================================
      FINAL
-================================== -->
+========================================= -->
 
 <section
     class="final"
@@ -1374,6 +1712,21 @@ footer{
             30 • 10 • 2026
         </div>
 
+
+        <div class="final-owners">
+
+            Урматтоо менен,
+
+            <strong>
+                той ээлери
+            </strong>
+
+            <strong>
+                Эршат & Кымбат
+            </strong>
+
+        </div>
+
     </div>
 
 </section>
@@ -1388,18 +1741,9 @@ footer{
 
 <script>
 
-/* ==================================================
-   GITHUB ФАЙЛДАРЫН АВТОМАТТЫК ТАБУУ
-================================================== */
-
-let images = [];
-
-let musicFile = null;
-
-
-/* ==================================================
-   GITHUB REPOSITORY URL АНЫКТОО
-================================================== */
+/* =========================================
+   GITHUB REPOSITORY
+========================================= */
 
 function getRepository(){
 
@@ -1411,12 +1755,9 @@ function getRepository(){
         .split("/")
         .filter(Boolean);
 
-
     let owner = "";
     let repo = "";
 
-
-    /* GitHub Pages */
 
     if(
         host.endsWith(".github.io")
@@ -1429,9 +1770,6 @@ function getRepository(){
             path[0] || "";
 
     }
-
-
-    /* github.com */
 
     else if(
         host === "github.com"
@@ -1454,9 +1792,14 @@ function getRepository(){
 }
 
 
-/* ==================================================
-   ФАЙЛДАРДЫ АЛУУ
-================================================== */
+/* =========================================
+   FILES
+========================================= */
+
+let images = [];
+
+let musicFile = null;
+
 
 async function loadGitHubFiles(){
 
@@ -1468,10 +1811,6 @@ async function loadGitHubFiles(){
         !repository.owner ||
         !repository.repo
     ){
-
-        showError(
-            "GitHub репозиторий аныкталган жок."
-        );
 
         return;
 
@@ -1491,7 +1830,7 @@ async function loadGitHubFiles(){
         if(!response.ok){
 
             throw new Error(
-                "GitHub API жооп берген жок"
+                "GitHub API error"
             );
 
         }
@@ -1501,9 +1840,7 @@ async function loadGitHubFiles(){
             await response.json();
 
 
-        /*
-         СҮРӨТ ФАЙЛДАРЫ
-        */
+        /* СҮРӨТТӨР */
 
         images =
             files
@@ -1512,7 +1849,9 @@ async function loadGitHubFiles(){
                 if(
                     file.type !== "file"
                 ){
+
                     return false;
+
                 }
 
                 const name =
@@ -1534,9 +1873,7 @@ async function loadGitHubFiles(){
             );
 
 
-        /*
-         МУЗЫКА
-        */
+        /* МУЗЫКА */
 
         const audioFiles =
             files.filter(file => {
@@ -1544,7 +1881,9 @@ async function loadGitHubFiles(){
                 if(
                     file.type !== "file"
                 ){
+
                     return false;
+
                 }
 
                 const name =
@@ -1560,7 +1899,9 @@ async function loadGitHubFiles(){
             });
 
 
-        if(audioFiles.length > 0){
+        if(
+            audioFiles.length > 0
+        ){
 
             musicFile =
                 audioFiles[0];
@@ -1572,10 +1913,6 @@ async function loadGitHubFiles(){
         }
 
 
-        /*
-         СҮРӨТТӨРДҮ КОЮУ
-        */
-
         displayImages();
 
 
@@ -1583,18 +1920,14 @@ async function loadGitHubFiles(){
 
         console.error(error);
 
-        showError(
-            "GitHub'дан файлдарды жүктөөдө ката кетти. Репозиторий Public болушу керек."
-        );
-
     }
 
 }
 
 
-/* ==================================================
-   СҮРӨТТӨРДҮ КОЮУ
-================================================== */
+/* =========================================
+   СҮРӨТТӨР
+========================================= */
 
 function displayImages(){
 
@@ -1616,7 +1949,9 @@ function displayImages(){
         );
 
 
-    if(images.length === 0){
+    if(
+        images.length === 0
+    ){
 
         gallery.innerHTML =
             `
@@ -1630,10 +1965,7 @@ function displayImages(){
     }
 
 
-    /*
-     БИРИНЧИ СҮРӨТ
-     HERO
-    */
+    /* HERO */
 
     const first =
         images[0];
@@ -1648,10 +1980,7 @@ function displayImages(){
         `;
 
 
-    /*
-     ЭКИНЧИ СҮРӨТ
-     FEATURE
-    */
+    /* FEATURE */
 
     const second =
         images[1] || images[0];
@@ -1666,9 +1995,7 @@ function displayImages(){
         `;
 
 
-    /*
-     БАТА ФОНУ
-    */
+    /* BLESSING */
 
     const blessing =
         document.getElementById(
@@ -1677,20 +2004,16 @@ function displayImages(){
 
 
     const blessingImage =
-        images[2] ||
-        images[0];
+        images[2] || images[0];
 
 
-    blessing.style
-        .setProperty(
-            "--blessing-photo",
-            `url("${blessingImage.download_url}")`
-        );
+    blessing.style.setProperty(
+        "--blessing-photo",
+        `url("${blessingImage.download_url}")`
+    );
 
 
-    /*
-     FINAL ФОН
-    */
+    /* FINAL */
 
     const final =
         document.getElementById(
@@ -1702,22 +2025,19 @@ function displayImages(){
         images[0];
 
 
-    final.style
-        .setProperty(
-            "--final-photo",
-            `url("${finalImage.download_url}")`
-        );
+    final.style.setProperty(
+        "--final-photo",
+        `url("${finalImage.download_url}")`
+    );
 
 
-    /*
-     ГАЛЕРЕЯ
-    */
+    /* GALLERY */
 
     gallery.innerHTML = "";
 
 
     images.forEach(
-        function(file,index){
+        function(file){
 
             const item =
                 document.createElement(
@@ -1768,9 +2088,9 @@ function displayImages(){
 }
 
 
-/* ==================================================
-   МУЗЫКА
-================================================== */
+/* =========================================
+   MUSIC
+========================================= */
 
 const music =
     document.getElementById(
@@ -1793,10 +2113,6 @@ function setupMusic(url){
 }
 
 
-/* ==================================================
-   ЧАКЫРУУНУ АЧУУ
-================================================== */
-
 function openInvitation(){
 
     const opening =
@@ -1812,7 +2128,7 @@ function openInvitation(){
 
     if(music.src){
 
-        music.volume = 0.75;
+        music.volume = .75;
 
 
         music.play()
@@ -1829,7 +2145,6 @@ function openInvitation(){
             function(error){
 
                 console.log(
-                    "Музыка башталган жок:",
                     error
                 );
 
@@ -1841,16 +2156,12 @@ function openInvitation(){
 }
 
 
-/* ==================================================
-   МУЗЫКА ON / OFF
-================================================== */
-
 function toggleMusic(){
 
     if(!music.src){
 
         alert(
-            "Музыка файлы табылган жок."
+            "Музыка табылган жок."
         );
 
         return;
@@ -1871,7 +2182,9 @@ function toggleMusic(){
             }
         );
 
-    }else{
+    }
+
+    else{
 
         music.pause();
 
@@ -1884,9 +2197,9 @@ function toggleMusic(){
 }
 
 
-/* ==================================================
+/* =========================================
    COUNTDOWN
-================================================== */
+========================================= */
 
 const weddingDate =
     new Date(
@@ -1904,27 +2217,25 @@ function updateCountdown(){
         weddingDate - now;
 
 
-    if(difference <= 0){
+    if(
+        difference <= 0
+    ){
 
         document.getElementById(
             "days"
         ).innerText = "0";
 
-
         document.getElementById(
             "hours"
         ).innerText = "0";
-
 
         document.getElementById(
             "minutes"
         ).innerText = "0";
 
-
         document.getElementById(
             "seconds"
         ).innerText = "0";
-
 
         return;
 
@@ -1998,9 +2309,9 @@ setInterval(
 );
 
 
-/* ==================================================
+/* =========================================
    LIGHTBOX
-================================================== */
+========================================= */
 
 function openLightbox(url){
 
@@ -2038,9 +2349,9 @@ function closeLightbox(){
 }
 
 
-/* ==================================================
+/* =========================================
    SCROLL ANIMATION
-================================================== */
+========================================= */
 
 const observer =
     new IntersectionObserver(
@@ -2066,7 +2377,7 @@ const observer =
         },
 
         {
-            threshold:0.12
+            threshold:.12
         }
 
     );
@@ -2087,20 +2398,9 @@ document
     );
 
 
-/* ==================================================
-   ERROR
-================================================== */
-
-function showError(message){
-
-    console.error(message);
-
-}
-
-
-/* ==================================================
+/* =========================================
    БАШТОО
-================================================== */
+========================================= */
 
 loadGitHubFiles();
 
