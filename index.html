@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Бегимай — Кыз узатуу</title>
+<title>Бегимай | Кыз узатуу</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,10 @@
 
 <style>
 
-/* =========================
-   НЕГИЗГИ
-========================= */
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -28,8 +24,8 @@ html{
 }
 
 body{
-    background:#f8f1e8;
-    color:#5a4938;
+    background:#f8f1e7;
+    color:#5b4b3b;
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
 }
@@ -43,37 +39,27 @@ button{
     font-family:inherit;
 }
 
-/* =========================
-   COLORS
-========================= */
-
-:root{
-    --cream:#f8f1e8;
-    --white:#fffdf9;
-    --gold:#c5a064;
-    --gold-dark:#9b783d;
-    --brown:#594735;
-    --text:#756553;
-}
-
-/* =========================
-   OPENING
-========================= */
+/* ==============================
+   АЧЫЛГАНДАГЫ БЕТ
+============================== */
 
 .opening{
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:99999;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
+    text-align:center;
+
     background:
         radial-gradient(
             circle at center,
             #fffdf9 0%,
-            #f8f1e8 70%
+            #f5eadc 50%,
+            #e7d5bd 100%
         );
 
     transition:1s ease;
@@ -85,458 +71,383 @@ button{
     pointer-events:none;
 }
 
-.opening-box{
+.opening-inner{
     width:90%;
-    max-width:430px;
-    min-height:650px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:35px 25px;
-
-    border:1px solid rgba(197,160,100,.5);
-
-    background:rgba(255,255,255,.55);
-
-    position:relative;
-
-    box-shadow:
-        0 25px 80px rgba(80,60,40,.12);
+    max-width:450px;
 }
 
-.opening-box:before{
-    content:"";
-    position:absolute;
-    top:15px;
-    left:15px;
-
-    width:70px;
-    height:70px;
-
-    border-left:1px solid var(--gold);
-    border-top:1px solid var(--gold);
+.opening-ornament{
+    font-size:40px;
+    color:#b08a55;
+    margin-bottom:20px;
 }
 
-.opening-box:after{
-    content:"";
-    position:absolute;
-    right:15px;
-    bottom:15px;
-
-    width:70px;
-    height:70px;
-
-    border-right:1px solid var(--gold);
-    border-bottom:1px solid var(--gold);
-}
-
-.open-small{
-    font-size:10px;
+.opening-small{
+    font-size:11px;
     letter-spacing:5px;
-    color:var(--gold-dark);
+    color:#96784f;
+    margin-bottom:15px;
 }
 
-.ornament{
-    color:var(--gold);
-    font-size:27px;
-    margin:20px 0;
-}
-
-.open-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:72px;
-    line-height:.8;
-    font-weight:500;
-    color:var(--brown);
-}
-
-.open-name{
+.opening-name{
     font-family:'Great Vibes',cursive;
-    font-size:65px;
-    color:var(--gold-dark);
-    margin-top:25px;
+    font-size:78px;
+    color:#8d6b42;
+    line-height:1;
 }
 
-.open-date{
+.opening-title{
     font-family:'Cormorant Garamond',serif;
     font-size:24px;
-    letter-spacing:3px;
-    margin-top:15px;
+    letter-spacing:5px;
+    margin-top:20px;
 }
 
 .open-button{
     margin-top:40px;
 
-    padding:16px 30px;
+    padding:17px 32px;
+
+    border:1px solid #b08a55;
+    border-radius:50px;
 
     background:transparent;
-
-    border:1px solid var(--gold);
-
-    color:var(--brown);
+    color:#80613e;
 
     letter-spacing:3px;
-
     font-size:11px;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.4s;
 }
 
 .open-button:hover{
-    background:var(--gold);
-    color:white;
+    background:#8d6b42;
+    color:#fff;
 }
 
-/* =========================
-   MUSIC
-========================= */
+
+/* ==============================
+   МУЗЫКА
+============================== */
 
 .music-button{
     position:fixed;
 
+    top:18px;
     right:18px;
-    bottom:18px;
 
-    width:52px;
-    height:52px;
+    z-index:9000;
 
+    width:50px;
+    height:50px;
+
+    border:none;
     border-radius:50%;
 
-    border:1px solid var(--gold);
+    background:rgba(112,84,48,.85);
 
-    background:rgba(255,255,255,.9);
+    color:white;
 
-    color:var(--gold-dark);
-
-    z-index:5000;
+    font-size:22px;
 
     cursor:pointer;
 
-    font-size:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
-/* =========================
+.music-button.active{
+    animation:rotateMusic 3s linear infinite;
+}
+
+@keyframes rotateMusic{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ==============================
    HERO
-========================= */
+============================== */
 
 .hero{
     min-height:100vh;
 
-    padding:20px;
-
     display:flex;
-    justify-content:center;
     align-items:center;
-}
+    justify-content:center;
 
-.hero-image{
-    width:100%;
-    max-width:600px;
-
-    height:92vh;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:300px 300px 0 0;
-
-    box-shadow:
-        0 25px 80px rgba(70,50,30,.18);
-}
-
-.hero-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.hero-image:after{
-    content:"";
-
-    position:absolute;
-    inset:0;
+    padding:40px 20px;
 
     background:
-        linear-gradient(
-            transparent 40%,
-            rgba(30,20,10,.72)
+        radial-gradient(
+            circle,
+            #fffdf9,
+            #efe1d0
         );
 }
 
-.hero-text{
-    position:absolute;
-
-    bottom:45px;
-
-    left:0;
-    right:0;
-
-    z-index:2;
-
-    color:white;
+.hero-inner{
+    width:100%;
+    max-width:550px;
 
     text-align:center;
+}
 
-    padding:20px;
+.hero-photo{
+    width:100%;
+    max-width:430px;
+
+    margin:0 auto 35px;
+
+    overflow:hidden;
+
+    border-radius:
+        220px
+        220px
+        25px
+        25px;
+
+    border:8px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 25px 60px
+        rgba(72,52,30,.2);
+}
+
+.hero-photo img{
+    height:600px;
+    object-fit:cover;
 }
 
 .hero-small{
-    font-size:10px;
-    letter-spacing:5px;
-}
-
-.hero-title{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:65px;
-
-    line-height:.9;
-
-    margin:15px 0;
+    font-size:11px;
+    letter-spacing:6px;
+    color:#98764b;
 }
 
 .hero-name{
     font-family:'Great Vibes',cursive;
+    font-size:82px;
+    color:#8d6b42;
 
-    font-size:65px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-    padding:90px 20px;
-}
-
-.container{
-    max-width:850px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title small{
-    color:var(--gold-dark);
-    letter-spacing:4px;
-    font-size:10px;
-}
-
-.section-title h2{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:55px;
-
-    font-weight:500;
-
-    color:var(--brown);
+    line-height:1;
 
     margin-top:10px;
 }
 
-/* =========================
-   INVITATION
-========================= */
+.hero-date{
+    margin-top:20px;
 
-.invitation{
-    background:var(--white);
-}
-
-.invitation-text{
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    border-top:1px solid rgba(197,160,100,.4);
-
-    border-bottom:1px solid rgba(197,160,100,.4);
-}
-
-.invitation-text p{
     font-family:'Cormorant Garamond',serif;
 
     font-size:27px;
 
-    line-height:1.6;
-
-    color:var(--brown);
-}
-
-.parents{
-    font-family:'Great Vibes',cursive;
-
-    color:var(--gold-dark);
-
-    font-size:42px;
-
-    margin-top:30px;
-}
-
-/* =========================
-   PHOTO SECTION
-========================= */
-
-.single-photo{
-    max-width:650px;
-
-    margin:auto;
-}
-
-.single-photo img{
-    max-height:850px;
-
-    object-fit:cover;
-
-    box-shadow:
-        0 20px 60px rgba(70,50,30,.15);
-}
-
-/* =========================
-   DATE
-========================= */
-
-.date-section{
-    background:var(--white);
-}
-
-.date-card{
-    max-width:650px;
-
-    margin:auto;
-
-    text-align:center;
-
-    border:1px solid rgba(197,160,100,.45);
-
-    padding:50px 20px;
-}
-
-.month{
-    color:var(--gold-dark);
-
-    font-size:12px;
-
     letter-spacing:5px;
 }
 
-.day{
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:130px;
+/* ==============================
+   ЖАЛПЫ SECTION
+============================== */
 
-    line-height:.9;
-
-    color:var(--brown);
-
-    margin:15px 0;
+section{
+    padding:85px 20px;
 }
 
-.time{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
-
-    color:var(--gold-dark);
+.container{
+    max-width:900px;
+    margin:auto;
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+.section-small{
+    text-align:center;
+
+    font-size:10px;
+    letter-spacing:4px;
+
+    color:#a08561;
+
+    margin-bottom:15px;
+}
+
+.section-title{
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    color:#80613e;
+
+    margin-bottom:30px;
+}
+
+
+/* ==============================
+   ЧАКЫРУУ
+============================== */
+
+.invitation{
+    background:#fffaf4;
+
+    text-align:center;
+}
+
+.invitation-text{
+    max-width:720px;
+
+    margin:auto;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    line-height:1.7;
+}
+
+.invitation-text strong{
+    color:#906d43;
+}
+
+
+/* ==============================
+   СҮРӨТ
+============================== */
+
+.feature-photo{
+    max-width:600px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(73,54,35,.18);
+}
+
+.feature-photo img{
+    height:650px;
+    object-fit:cover;
+}
+
+
+/* ==============================
+   DATE
+============================== */
+
+.date-section{
+    background:#f1e5d5;
+    text-align:center;
+}
+
+.date-number{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:115px;
+
+    line-height:.8;
+
+    color:#80613e;
+}
+
+.date-month{
+    font-family:'Great Vibes',cursive;
+
+    font-size:65px;
+
+    color:#a17b4b;
+
+    margin-top:25px;
+}
+
+.date-time{
+    margin-top:20px;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+}
 
 .countdown{
-    display:grid;
+    margin-top:45px;
 
-    grid-template-columns:repeat(4,1fr);
+    display:flex;
 
-    gap:8px;
+    justify-content:center;
 
-    margin-top:40px;
+    gap:12px;
+
+    flex-wrap:wrap;
 }
 
 .count{
-    border:1px solid rgba(197,160,100,.35);
+    width:82px;
 
-    padding:15px 5px;
+    padding:14px 5px;
+
+    background:rgba(255,255,255,.7);
+
+    border:1px solid #d6c2a4;
 }
 
-.count strong{
+.count span{
     display:block;
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:32px;
+    font-size:36px;
 
-    color:var(--brown);
+    color:#80613e;
 }
 
-.count span{
+.count small{
     font-size:8px;
-
-    color:var(--text);
-
     letter-spacing:1px;
 }
 
-/* =========================
-   LOCATION
-========================= */
 
-.location-box{
-    max-width:650px;
+/* ==============================
+   ДАРЕК
+============================== */
 
-    margin:auto;
-
+.location{
     text-align:center;
 
-    padding:50px 20px;
-
-    border:1px solid rgba(197,160,100,.4);
-}
-
-.location-icon{
-    font-size:40px;
-    color:var(--gold);
-}
-
-.location-name{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:35px;
-
-    margin:15px 0 10px;
+    background:#fffaf4;
 }
 
 .address{
-    color:var(--text);
+    font-family:'Cormorant Garamond',serif;
 
-    line-height:1.8;
+    font-size:27px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
 }
 
 .map-button{
     display:inline-block;
 
-    margin-top:25px;
+    padding:16px 30px;
 
-    padding:15px 30px;
+    border-radius:50px;
 
-    background:var(--gold-dark);
+    background:#80613e;
 
-    color:white;
+    color:#fff;
 
     text-decoration:none;
 
@@ -545,82 +456,139 @@ section{
     letter-spacing:2px;
 }
 
-/* =========================
-   GALLERY
-========================= */
 
-.gallery-section{
-    background:var(--white);
+/* ==============================
+   ПРОГРАММА
+============================== */
+
+.program{
+    background:#f8f0e5;
 }
 
+.timeline{
+    max-width:650px;
+
+    margin:auto;
+}
+
+.timeline-row{
+    display:flex;
+
+    gap:25px;
+
+    padding:25px 0;
+
+    border-bottom:1px solid #d8c6ad;
+}
+
+.timeline-time{
+    min-width:70px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    color:#9a7447;
+}
+
+.timeline-content h3{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+}
+
+.timeline-content p{
+    font-size:11px;
+
+    color:#8e7e6b;
+}
+
+
+/* ==============================
+   ГАЛЕРЕЯ
+============================== */
+
 .gallery{
+    background:#fffaf4;
+}
+
+.gallery-grid{
+    max-width:950px;
+
+    margin:auto;
+
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:8px;
+    gap:12px;
 }
 
-.gallery-photo{
-    aspect-ratio:1/1;
-
+.gallery-item{
     overflow:hidden;
+
+    border-radius:12px;
+
+    background:#eee;
 
     cursor:pointer;
 }
 
-.gallery-photo:first-child{
-    grid-column:span 2;
-
-    aspect-ratio:16/10;
-}
-
-.gallery-photo img{
+.gallery-item img{
     width:100%;
-    height:100%;
+
+    height:390px;
 
     object-fit:cover;
 
-    transition:.5s;
+    transition:.6s;
 }
 
-.gallery-photo:hover img{
+.gallery-item:hover img{
     transform:scale(1.05);
 }
 
-/* =========================
+.gallery-item:first-child{
+    grid-column:span 2;
+}
+
+.gallery-item:first-child img{
+    height:560px;
+}
+
+
+/* ==============================
    LIGHTBOX
-========================= */
+============================== */
 
 .lightbox{
     position:fixed;
 
     inset:0;
 
-    z-index:9998;
+    z-index:100000;
 
-    background:rgba(20,15,10,.93);
+    background:rgba(0,0,0,.93);
 
-    display:flex;
+    display:none;
 
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
     padding:20px;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.3s;
 }
 
-.lightbox.active{
-    opacity:1;
-    visibility:visible;
+.lightbox.show{
+    display:flex;
 }
 
 .lightbox img{
+    width:auto;
+
     max-width:95%;
+
     max-height:90vh;
 
     object-fit:contain;
@@ -639,46 +607,85 @@ section{
     cursor:pointer;
 }
 
-/* =========================
-   BLESSING
-========================= */
+
+/* ==============================
+   БАТА
+============================== */
 
 .blessing{
+    min-height:650px;
+
+    display:flex;
+
+    align-items:center;
+
     text-align:center;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(55,38,22,.52),
+            rgba(55,38,22,.52)
+        ),
+        center/cover no-repeat;
+
+    background-image:
+        linear-gradient(
+            rgba(55,38,22,.52),
+            rgba(55,38,22,.52)
+        ),
+        var(--blessing-photo);
 }
 
-.blessing-text{
+.blessing-content{
     max-width:750px;
 
     margin:auto;
+}
 
+.blessing .section-small{
+    color:#ead9bf;
+}
+
+.blessing .section-title{
+    color:#fff;
+}
+
+.blessing-text{
     font-family:'Cormorant Garamond',serif;
 
-    font-size:32px;
+    font-size:29px;
 
-    line-height:1.6;
-
-    color:var(--brown);
+    line-height:1.65;
 }
 
-.blessing-name{
+
+/* ==============================
+   АТА-ЭНЕ
+============================== */
+
+.parents{
+    background:#f3e7d7;
+
+    text-align:center;
+}
+
+.parents-name{
     font-family:'Great Vibes',cursive;
 
-    font-size:48px;
+    font-size:60px;
 
-    color:var(--gold-dark);
-
-    margin-top:25px;
+    color:#8c6940;
 }
 
-/* =========================
+
+/* ==============================
    FINAL
-========================= */
+============================== */
 
 .final{
-    min-height:80vh;
-
-    position:relative;
+    min-height:90vh;
 
     display:flex;
 
@@ -686,148 +693,183 @@ section{
 
     justify-content:center;
 
-    overflow:hidden;
+    text-align:center;
 
-    padding:0;
-}
+    color:#fff;
 
-.final img{
-    position:absolute;
+    background:
+        linear-gradient(
+            rgba(45,30,18,.48),
+            rgba(45,30,18,.48)
+        ),
+        var(--final-photo);
 
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-}
-
-.final:after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(35,25,15,.52);
+    background-position:center;
+    background-size:cover;
 }
 
 .final-content{
-    position:relative;
-
-    z-index:2;
-
-    color:white;
-
-    text-align:center;
-
-    padding:20px;
+    width:90%;
 }
 
-.final-content h2{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:75px;
-
-    font-weight:500;
-}
-
-.final-content p{
+.final-small{
     font-size:11px;
 
-    letter-spacing:3px;
-
-    margin-top:15px;
+    letter-spacing:6px;
 }
 
 .final-name{
     font-family:'Great Vibes',cursive;
 
-    font-size:65px;
+    font-size:90px;
 
-    margin-top:20px;
+    margin:20px 0;
 }
 
-/* =========================
+.final-date{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:27px;
+
+    letter-spacing:5px;
+}
+
+
+/* ==============================
    FOOTER
-========================= */
+============================== */
 
 footer{
-    background:#40352c;
-
-    color:white;
+    padding:30px 20px;
 
     text-align:center;
 
-    padding:30px;
+    background:#e5d5c0;
+
+    color:#705a40;
 
     font-size:10px;
 
     letter-spacing:2px;
 }
 
-/* =========================
-   ANIMATION
-========================= */
+
+/* ==============================
+   АНИМАЦИЯ
+============================== */
 
 .reveal{
     opacity:0;
 
     transform:translateY(35px);
 
-    transition:1s;
+    transition:1s ease;
 }
 
-.reveal.show{
+.reveal.visible{
     opacity:1;
 
     transform:translateY(0);
 }
 
-/* =========================
+
+/* ==============================
+   LOADING
+============================== */
+
+.loading{
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#9a8060;
+
+    font-size:13px;
+}
+
+
+/* ==============================
+   ERROR
+============================== */
+
+.error-message{
+    display:none;
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    background:#f3dfd7;
+
+    color:#8b493b;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+
+/* ==============================
    MOBILE
-========================= */
+============================== */
 
 @media(max-width:600px){
 
-    .open-title{
-        font-size:60px;
+    .opening-name{
+        font-size:65px;
     }
 
-    .open-name{
-        font-size:58px;
-    }
-
-    .hero-image{
-        height:85vh;
-    }
-
-    .hero-title{
-        font-size:55px;
+    .hero-photo img{
+        height:540px;
     }
 
     .hero-name{
-        font-size:58px;
+        font-size:72px;
     }
 
-    .section-title h2{
-        font-size:48px;
+    .section-title{
+        font-size:40px;
     }
 
-    .invitation-text p{
-        font-size:24px;
+    .invitation-text{
+        font-size:22px;
     }
 
-    .day{
-        font-size:110px;
+    .feature-photo img{
+        height:550px;
+    }
+
+    .date-number{
+        font-size:85px;
+    }
+
+    .date-month{
+        font-size:52px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item:first-child{
+        grid-column:span 1;
+    }
+
+    .gallery-item img,
+    .gallery-item:first-child img{
+        height:500px;
     }
 
     .blessing-text{
-        font-size:27px;
+        font-size:24px;
     }
 
-    .count strong{
-        font-size:27px;
+    .final-name{
+        font-size:70px;
     }
 
 }
@@ -839,40 +881,35 @@ footer{
 <body>
 
 
-<!-- ======================================================
-     АЧЫЛГАНДА ЧЫККАН БИРИНЧИ ЭКРАН
-====================================================== -->
+<!-- ==================================
+     OPENING
+================================== -->
 
 <div class="opening" id="opening">
 
-    <div class="opening-box">
+    <div class="opening-inner">
 
-        <div class="open-small">
-            СҮЙҮҮ МЕНЕН ЧАКЫРАБЫЗ
+        <div class="opening-ornament">
+            ❦
         </div>
 
-        <div class="ornament">
-            ✦ ❈ ✦
+        <div class="opening-small">
+            КЫЗ УЗАТУУ ТОЮНА
         </div>
 
-        <div class="open-title">
-            КЫЗ<br>УЗАТУУ
-        </div>
-
-        <div class="open-name">
+        <div class="opening-name">
             Бегимай
         </div>
 
-        <div class="open-date">
-            30 • 10 • 2026
+        <div class="opening-title">
+            ЧАКЫРУУ
         </div>
 
         <button
             class="open-button"
-            onclick="openInvitation()">
-
+            onclick="openInvitation()"
+        >
             ЧАКЫРУУНУ АЧУУ
-
         </button>
 
     </div>
@@ -880,67 +917,53 @@ footer{
 </div>
 
 
-<!-- ======================================================
-     МУЗЫКА
-     
-     МААНИЛҮҮ:
-     Бул файл HTML менен бир папкада турушу керек:
-     
-     Nelya-Kyz-uzatuu.mp3
-====================================================== -->
+<!-- ==================================
+     MUSIC
+================================== -->
 
 <audio
-    id="weddingMusic"
+    id="music"
     loop
-    preload="auto">
+    preload="auto"
+></audio>
 
-    <source
-        src="./Nelya-Kyz-uzatuu.mp3"
-        type="audio/mpeg">
-
-</audio>
-
-
-<!-- Музыка кнопкасы -->
 
 <button
     class="music-button"
     id="musicButton"
-    onclick="toggleMusic()">
-
+    onclick="toggleMusic()"
+>
     ♫
-
 </button>
 
 
-<!-- ======================================================
+<!-- ==================================
      HERO
-====================================================== -->
+================================== -->
 
 <section class="hero">
 
-    <div class="hero-image reveal">
+    <div class="hero-inner">
 
-        <!-- БИРИНЧИ СҮРӨТ -->
-
-        <img
-            src="./photo1.jpg"
-            alt="Бегимай">
-
-        <div class="hero-text">
-
-            <div class="hero-small">
-                КЫЗ УЗАТУУ ТОЮНА
+        <div
+            class="hero-photo reveal"
+            id="heroPhoto"
+        >
+            <div class="loading">
+                Сүрөт жүктөлүүдө...
             </div>
+        </div>
 
-            <div class="hero-title">
-                ЧАКЫРУУ
-            </div>
+        <div class="hero-small">
+            КЫЗ УЗАТУУ
+        </div>
 
-            <div class="hero-name">
-                Бегимай
-            </div>
+        <div class="hero-name">
+            Бегимай
+        </div>
 
+        <div class="hero-date">
+            30 • 10 • 2026
         </div>
 
     </div>
@@ -948,62 +971,35 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     ЧАКЫРУУ ТЕКСТИ
-====================================================== -->
+<!-- ==================================
+     INVITATION
+================================== -->
 
 <section class="invitation">
 
-    <div class="container">
+    <div class="container reveal">
 
-        <div class="section-title reveal">
-
-            <small>
-                АРДАктуу КОНАКТАР
-            </small>
-
-            <h2>
-                Сиздерди күтөбүз
-            </h2>
-
-            <div class="ornament">
-                ✦ ❈ ✦
-            </div>
-
+        <div class="section-small">
+            КЫМБАТТУУ КОНАКТАР!
         </div>
 
+        <h2 class="section-title">
+            Сиздерди күтөбүз
+        </h2>
 
-        <div class="invitation-text reveal">
+        <div class="invitation-text">
 
-            <p>
-                Урматтуу туугандар,
-                куда-сөөктөр,
-                жакындар жана достор!
-            </p>
+            Сиздерди биздин сүйүктүү кызыбыз
+            <strong>Бегимайдын</strong>
+            кыз узатуу тоюна арналган
+            ак дасторконубуздун төрүнө
+            келип, кубанычыбызга ортоктош
+            болуп кетүүгө чакырабыз.
 
-            <br>
+            <br><br>
 
-            <p>
-                Сиздерди сүйүктүү кызыбыз
-                <strong>Бегимайдын</strong>
-                кыз узатуу тоюна
-                арналган ак дасторконубузга
-                чакырабыз.
-            </p>
-
-            <br>
-
-            <p>
-                Бул өзгөчө күндө биздин
-                кубанычыбызды тең бөлүшүп,
-                ак батаңызды берип,
-                төрүбүздөн орун алышыңызды
-                каалайбыз.
-            </p>
-
-            <div class="parents">
-                Эршат & Кымбат
-            </div>
+            Бул өзгөчө күнү сиздер менен
+            бирге болуу биз үчүн чоң кубаныч!
 
         </div>
 
@@ -1012,89 +1008,213 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     СҮРӨТ 2
-====================================================== -->
+<!-- ==================================
+     SECOND PHOTO
+================================== -->
 
 <section>
 
-    <div class="container">
-
-        <div class="single-photo reveal">
-
-            <img
-                src="./photo2.jpg"
-                alt="Бегимай">
-
+    <div
+        class="feature-photo reveal"
+        id="featurePhoto"
+    >
+        <div class="loading">
+            Сүрөт жүктөлүүдө...
         </div>
-
     </div>
 
 </section>
 
 
-<!-- ======================================================
-     ДАТА
-====================================================== -->
+<!-- ==================================
+     DATE
+================================== -->
 
 <section class="date-section">
 
-    <div class="container">
+    <div class="container reveal">
 
-        <div class="section-title reveal">
+        <div class="section-small">
+            ТОЙ КҮНҮ
+        </div>
 
-            <small>
-                БАКТЫЛУУ КҮНҮБҮЗ
-            </small>
+        <div class="date-number">
+            30
+        </div>
 
-            <h2>
-                Той күнү
-            </h2>
+        <div class="date-month">
+            Октябрь
+        </div>
 
+        <div class="date-time">
+            2026 • СААТ 11:00
         </div>
 
 
-        <div class="date-card reveal">
+        <div class="countdown">
 
-            <div class="month">
-                ОКТЯБРЬ 2026
+            <div class="count">
+                <span id="days">0</span>
+                <small>КҮН</small>
             </div>
 
-            <div class="day">
-                30
+            <div class="count">
+                <span id="hours">0</span>
+                <small>СААТ</small>
             </div>
 
-            <div class="ornament">
-                ✦
+            <div class="count">
+                <span id="minutes">0</span>
+                <small>МҮНӨТ</small>
             </div>
 
-            <div class="time">
-                Саат 11:00
+            <div class="count">
+                <span id="seconds">0</span>
+                <small>СЕКУНД</small>
             </div>
 
+        </div>
 
-            <!-- COUNTDOWN -->
+    </div>
 
-            <div class="countdown">
+</section>
 
-                <div class="count">
-                    <strong id="days">00</strong>
-                    <span>КҮН</span>
+
+<!-- ==================================
+     LOCATION
+================================== -->
+
+<section class="location">
+
+    <div class="container reveal">
+
+        <div class="section-small">
+            БИЗДИН ДАРЕК
+        </div>
+
+        <h2 class="section-title">
+            Той өтүүчү жер
+        </h2>
+
+        <div class="address">
+
+            Орнок айылы<br>
+            Керимбаев көчөсү<br>
+            №44 үй
+
+        </div>
+
+        <a
+            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=Орнок+айылы+Керимбаев+көчөсү+44"
+            target="_blank"
+        >
+            📍 КАРТАДАН КӨРҮҮ
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PROGRAM
+================================== -->
+
+<section class="program">
+
+    <div class="container reveal">
+
+        <div class="section-small">
+            ТОЙДУН ЖҮРҮШҮ
+        </div>
+
+        <h2 class="section-title">
+            Программа
+        </h2>
+
+
+        <div class="timeline">
+
+            <div class="timeline-row">
+
+                <div class="timeline-time">
+                    11:00
                 </div>
 
-                <div class="count">
-                    <strong id="hours">00</strong>
-                    <span>СААТ</span>
+                <div class="timeline-content">
+
+                    <h3>
+                        Конокторду тосуп алуу
+                    </h3>
+
+                    <p>
+                        Ак дасторконубузга кош келиңиздер!
+                    </p>
+
                 </div>
 
-                <div class="count">
-                    <strong id="minutes">00</strong>
-                    <span>МҮНӨТ</span>
+            </div>
+
+
+            <div class="timeline-row">
+
+                <div class="timeline-time">
+                    12:00
                 </div>
 
-                <div class="count">
-                    <strong id="seconds">00</strong>
-                    <span>СЕКУНД</span>
+                <div class="timeline-content">
+
+                    <h3>
+                        Бата-тилек
+                    </h3>
+
+                    <p>
+                        Кызга арналган ак тилектер.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-row">
+
+                <div class="timeline-time">
+                    13:00
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Майрамдык дасторкон
+                    </h3>
+
+                    <p>
+                        Жакшы маанай жана таттуу көз ирмемдер.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-row">
+
+                <div class="timeline-time">
+                    14:00
+                </div>
+
+                <div class="timeline-content">
+
+                    <h3>
+                        Кыз узатуу
+                    </h3>
+
+                    <p>
+                        Ак жол тилеп, кызды узатуу аземи.
+                    </p>
+
                 </div>
 
             </div>
@@ -1106,54 +1226,32 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     ДАРЕК
-====================================================== -->
+<!-- ==================================
+     GALLERY
+================================== -->
 
-<section>
+<section class="gallery">
 
-    <div class="container">
+    <div class="container reveal">
 
-        <div class="section-title reveal">
-
-            <small>
-                БИЗДИН ДАРЕК
-            </small>
-
-            <h2>
-                Кайда?
-            </h2>
-
+        <div class="section-small">
+            ЭСТЕЛИК ҮЧҮН
         </div>
 
+        <h2 class="section-title">
+            Бегимай
+        </h2>
 
-        <div class="location-box reveal">
-
-            <div class="location-icon">
-                ♡
-            </div>
-
-            <div class="location-name">
-                Орнок айылы
-            </div>
-
-            <div class="address">
-
-                Керимбаев көчөсү<br>
-                44-үй
-
-            </div>
+    </div>
 
 
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Орнок+айылы+Керимбаев+көчөсү+44"
-                target="_blank"
-                class="map-button">
+    <div
+        class="gallery-grid"
+        id="gallery"
+    >
 
-                КАРТАДАН КӨРҮҮ
-
-            </a>
-
+        <div class="loading">
+            Сүрөттөр жүктөлүүдө...
         </div>
 
     </div>
@@ -1161,180 +1259,65 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     ГАЛЕРЕЯ
-====================================================== -->
-
-<section class="gallery-section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>
-                ЭСТЕЛИК ҮЧҮН
-            </small>
-
-            <h2>
-                Бактылуу көз ирмемдер
-            </h2>
-
-            <div class="ornament">
-                ✦ ❈ ✦
-            </div>
-
-        </div>
-
-
-        <div class="gallery">
-
-
-            <!-- СҮРӨТ 1 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo1.jpg')">
-
-                <img
-                    src="./photo1.jpg"
-                    alt="Бегимай 1">
-
-            </div>
-
-
-            <!-- СҮРӨТ 2 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo2.jpg')">
-
-                <img
-                    src="./photo2.jpg"
-                    alt="Бегимай 2">
-
-            </div>
-
-
-            <!-- СҮРӨТ 3 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo3.jpg')">
-
-                <img
-                    src="./photo3.jpg"
-                    alt="Бегимай 3">
-
-            </div>
-
-
-            <!-- СҮРӨТ 4 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo4.jpg')">
-
-                <img
-                    src="./photo4.jpg"
-                    alt="Бегимай 4">
-
-            </div>
-
-
-            <!-- СҮРӨТ 5 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo5.jpg')">
-
-                <img
-                    src="./photo5.jpg"
-                    alt="Бегимай 5">
-
-            </div>
-
-
-            <!-- СҮРӨТ 6 -->
-
-            <div
-                class="gallery-photo reveal"
-                onclick="showImage('./photo6.jpg')">
-
-                <img
-                    src="./photo6.jpg"
-                    alt="Бегимай 6">
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     ЧОҢОЙТУП КӨРҮҮ
-====================================================== -->
+<!-- ==================================
+     LIGHTBOX
+================================== -->
 
 <div
     class="lightbox"
     id="lightbox"
-    onclick="closeImage()">
+    onclick="closeLightbox()"
+>
 
     <div
-        class="close">
+        class="close"
+        onclick="closeLightbox()"
+    >
         ×
     </div>
 
     <img
-        id="bigImage"
+        id="lightboxImage"
         src=""
-        alt="Сүрөт">
+        alt=""
+    >
 
 </div>
 
 
-<!-- ======================================================
-     БАТА
-====================================================== -->
+<!-- ==================================
+     BLESSING
+================================== -->
 
-<section class="blessing">
+<section
+    class="blessing"
+    id="blessing"
+>
 
-    <div class="container">
+    <div class="blessing-content reveal">
 
-        <div class="section-title reveal">
-
-            <small>
-                АК БАТА
-            </small>
-
-            <h2>
-                Ак жол каалайбыз
-            </h2>
-
+        <div class="section-small">
+            АТА-ЭНЕНИН ТИЛЕГИ
         </div>
 
+        <h2 class="section-title">
+            Ак жол, кызым!
+        </h2>
 
-        <div class="blessing-text reveal">
+        <div class="blessing-text">
 
-            «Кыз — төрдүн көркү,
-            үйдүн куту.
-
-            <br><br>
-
-            Бегимайдын барган жери
-            берекелүү болсун.
+            Кызым, барган жериңден бакыт тап.
+            Жолуң ачык, өмүрүң узун болсун.
 
             <br><br>
 
-            Ак жолтой болуп,
-            бактылуу өмүр сүрсүн!»
+            Барган үйүңө кут болуп,
+            сүйүктүү жар, мээримдүү эне бол.
 
-            <div class="blessing-name">
-                Бегимай
-            </div>
+            <br><br>
+
+            Ак жолуңдан адашпа,
+            жүзүңдөн жылмаюу кетпесин!
 
         </div>
 
@@ -1343,37 +1326,52 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     АКЫРКЫ СҮРӨТ
-====================================================== -->
+<!-- ==================================
+     PARENTS
+================================== -->
 
-<section class="final">
+<section class="parents">
 
-    <img
-        src="./photo3.jpg"
-        alt="Бегимай">
+    <div class="container reveal">
 
-    <div class="final-content">
-
-        <div class="ornament">
-            ✦ ❈ ✦
+        <div class="section-small">
+            УРМАТ МЕНЕН
         </div>
 
-        <h2>
-            Күтөбүз!
+        <h2 class="section-title">
+            Ата-энеңиздер
         </h2>
 
-        <p>
-            КУБАНЫЧЫБЫЗДЫ
-            ТЕҢ БӨЛҮШҮҢҮЗДҮ КАЛАЙБЫЗ
-        </p>
+        <div class="parents-name">
+            Эршат & Кымбат
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     FINAL
+================================== -->
+
+<section
+    class="final"
+    id="final"
+>
+
+    <div class="final-content reveal">
+
+        <div class="final-small">
+            СИЗДЕРДИ КҮТӨБҮЗ
+        </div>
 
         <div class="final-name">
             Бегимай
         </div>
 
-        <div class="ornament">
-            ✦
+        <div class="final-date">
+            30 • 10 • 2026
         </div>
 
     </div>
@@ -1381,133 +1379,526 @@ footer{
 </section>
 
 
-<!-- ======================================================
-     FOOTER
-====================================================== -->
-
 <footer>
 
-    Бегимайдын Кыз узатуу тою
-
-    <br><br>
-
-    30 • 10 • 2026
-
-    <br><br>
-
-    Эршат & Кымбат
+    БЕГИМАЙДЫН КЫЗ УЗАТУУ ТОЮ 🤍
 
 </footer>
 
 
 <script>
 
-/* ======================================================
-   1. ЧАКЫРУУНУ АЧУУ
-====================================================== */
+/* ==================================================
+   GITHUB ФАЙЛДАРЫН АВТОМАТТЫК ТАБУУ
+================================================== */
 
-function openInvitation(){
+let images = [];
 
-    const opening =
-        document.getElementById("opening");
+let musicFile = null;
 
-    opening.classList.add("hide");
 
-    /*
-       Бул жерде музыка башталат.
-       Браузер кнопка басылганын "user action"
-       катары кабыл алгандыктан музыка ойной алат.
-    */
+/* ==================================================
+   GITHUB REPOSITORY URL АНЫКТОО
+================================================== */
 
-    const music =
-        document.getElementById("weddingMusic");
+function getRepository(){
 
-    music.volume = 0.7;
+    const host =
+        window.location.hostname;
 
-    music.play()
-        .then(function(){
+    const path =
+        window.location.pathname
+        .split("/")
+        .filter(Boolean);
 
-            document
-                .getElementById("musicButton")
-                .innerHTML = "❚❚";
 
-        })
-        .catch(function(error){
+    let owner = "";
+    let repo = "";
 
-            console.log(
-                "Музыка башталган жок:",
-                error
-            );
 
-        });
+    /* GitHub Pages */
+
+    if(
+        host.endsWith(".github.io")
+    ){
+
+        owner =
+            host.split(".")[0];
+
+        repo =
+            path[0] || "";
+
+    }
+
+
+    /* github.com */
+
+    else if(
+        host === "github.com"
+    ){
+
+        owner =
+            path[0] || "";
+
+        repo =
+            path[1] || "";
+
+    }
+
+
+    return {
+        owner,
+        repo
+    };
 
 }
 
 
-/* ======================================================
-   2. МУЗЫКА ON / OFF
-====================================================== */
+/* ==================================================
+   ФАЙЛДАРДЫ АЛУУ
+================================================== */
 
-let musicIsPlaying = false;
+async function loadGitHubFiles(){
 
-
-function toggleMusic(){
-
-    const music =
-        document.getElementById("weddingMusic");
-
-    const button =
-        document.getElementById("musicButton");
+    const repository =
+        getRepository();
 
 
     if(
-        music.paused
+        !repository.owner ||
+        !repository.repo
     ){
 
-        music.play()
-            .then(function(){
+        showError(
+            "GitHub репозиторий аныкталган жок."
+        );
 
-                button.innerHTML = "❚❚";
+        return;
 
-                musicIsPlaying = true;
+    }
+
+
+    const api =
+        `https://api.github.com/repos/${repository.owner}/${repository.repo}/contents/`;
+
+
+    try{
+
+        const response =
+            await fetch(api);
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "GitHub API жооп берген жок"
+            );
+
+        }
+
+
+        const files =
+            await response.json();
+
+
+        /*
+         СҮРӨТ ФАЙЛДАРЫ
+        */
+
+        images =
+            files
+            .filter(file => {
+
+                if(
+                    file.type !== "file"
+                ){
+                    return false;
+                }
+
+                const name =
+                    file.name.toLowerCase();
+
+                return (
+                    name.endsWith(".jpg") ||
+                    name.endsWith(".jpeg") ||
+                    name.endsWith(".png") ||
+                    name.endsWith(".webp")
+                );
 
             })
-            .catch(function(){
+            .sort(
+                (a,b) =>
+                    a.name.localeCompare(
+                        b.name
+                    )
+            );
 
-                alert(
-                    "Музыка файлы табылган жок. " +
-                    "Nelya-Kyz-uzatuu.mp3 файлын index.html менен бир папкага салыңыз."
+
+        /*
+         МУЗЫКА
+        */
+
+        const audioFiles =
+            files.filter(file => {
+
+                if(
+                    file.type !== "file"
+                ){
+                    return false;
+                }
+
+                const name =
+                    file.name.toLowerCase();
+
+                return (
+                    name.endsWith(".mp3") ||
+                    name.endsWith(".wav") ||
+                    name.endsWith(".m4a") ||
+                    name.endsWith(".ogg")
                 );
 
             });
 
-    }else{
 
-        music.pause();
+        if(audioFiles.length > 0){
 
-        button.innerHTML = "♫";
+            musicFile =
+                audioFiles[0];
 
-        musicIsPlaying = false;
+            setupMusic(
+                musicFile.download_url
+            );
+
+        }
+
+
+        /*
+         СҮРӨТТӨРДҮ КОЮУ
+        */
+
+        displayImages();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showError(
+            "GitHub'дан файлдарды жүктөөдө ката кетти. Репозиторий Public болушу керек."
+        );
 
     }
 
 }
 
 
-/* ======================================================
-   3. COUNTDOWN
-====================================================== */
+/* ==================================================
+   СҮРӨТТӨРДҮ КОЮУ
+================================================== */
+
+function displayImages(){
+
+    const gallery =
+        document.getElementById(
+            "gallery"
+        );
+
+
+    const hero =
+        document.getElementById(
+            "heroPhoto"
+        );
+
+
+    const feature =
+        document.getElementById(
+            "featurePhoto"
+        );
+
+
+    if(images.length === 0){
+
+        gallery.innerHTML =
+            `
+            <div class="loading">
+                Сүрөт файлдары табылган жок.
+            </div>
+            `;
+
+        return;
+
+    }
+
+
+    /*
+     БИРИНЧИ СҮРӨТ
+     HERO
+    */
+
+    const first =
+        images[0];
+
+
+    hero.innerHTML =
+        `
+        <img
+            src="${first.download_url}"
+            alt="Бегимай"
+        >
+        `;
+
+
+    /*
+     ЭКИНЧИ СҮРӨТ
+     FEATURE
+    */
+
+    const second =
+        images[1] || images[0];
+
+
+    feature.innerHTML =
+        `
+        <img
+            src="${second.download_url}"
+            alt="Бегимай"
+        >
+        `;
+
+
+    /*
+     БАТА ФОНУ
+    */
+
+    const blessing =
+        document.getElementById(
+            "blessing"
+        );
+
+
+    const blessingImage =
+        images[2] ||
+        images[0];
+
+
+    blessing.style
+        .setProperty(
+            "--blessing-photo",
+            `url("${blessingImage.download_url}")`
+        );
+
+
+    /*
+     FINAL ФОН
+    */
+
+    const final =
+        document.getElementById(
+            "final"
+        );
+
+
+    const finalImage =
+        images[0];
+
+
+    final.style
+        .setProperty(
+            "--final-photo",
+            `url("${finalImage.download_url}")`
+        );
+
+
+    /*
+     ГАЛЕРЕЯ
+    */
+
+    gallery.innerHTML = "";
+
+
+    images.forEach(
+        function(file,index){
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "gallery-item";
+
+
+            item.onclick =
+                function(){
+
+                    openLightbox(
+                        file.download_url
+                    );
+
+                };
+
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                file.download_url;
+
+
+            image.alt =
+                "Бегимай";
+
+
+            item.appendChild(
+                image
+            );
+
+
+            gallery.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* ==================================================
+   МУЗЫКА
+================================================== */
+
+const music =
+    document.getElementById(
+        "music"
+    );
+
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+function setupMusic(url){
+
+    music.src = url;
+
+    music.load();
+
+}
+
+
+/* ==================================================
+   ЧАКЫРУУНУ АЧУУ
+================================================== */
+
+function openInvitation(){
+
+    const opening =
+        document.getElementById(
+            "opening"
+        );
+
+
+    opening.classList.add(
+        "hide"
+    );
+
+
+    if(music.src){
+
+        music.volume = 0.75;
+
+
+        music.play()
+        .then(
+            function(){
+
+                musicButton
+                    .classList
+                    .add("active");
+
+            }
+        )
+        .catch(
+            function(error){
+
+                console.log(
+                    "Музыка башталган жок:",
+                    error
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   МУЗЫКА ON / OFF
+================================================== */
+
+function toggleMusic(){
+
+    if(!music.src){
+
+        alert(
+            "Музыка файлы табылган жок."
+        );
+
+        return;
+
+    }
+
+
+    if(music.paused){
+
+        music.play()
+        .then(
+            function(){
+
+                musicButton
+                    .classList
+                    .add("active");
+
+            }
+        );
+
+    }else{
+
+        music.pause();
+
+        musicButton
+            .classList
+            .remove("active");
+
+    }
+
+}
+
+
+/* ==================================================
+   COUNTDOWN
+================================================== */
 
 const weddingDate =
     new Date(
-        "2026-10-30T11:00:00"
+        "2026-10-30T11:00:00+06:00"
     ).getTime();
 
 
-function countdown(){
+function updateCountdown(){
 
     const now =
         new Date().getTime();
+
 
     const difference =
         weddingDate - now;
@@ -1515,13 +1906,25 @@ function countdown(){
 
     if(difference <= 0){
 
-        document.getElementById("days").innerText = "00";
+        document.getElementById(
+            "days"
+        ).innerText = "0";
 
-        document.getElementById("hours").innerText = "00";
 
-        document.getElementById("minutes").innerText = "00";
+        document.getElementById(
+            "hours"
+        ).innerText = "0";
 
-        document.getElementById("seconds").innerText = "00";
+
+        document.getElementById(
+            "minutes"
+        ).innerText = "0";
+
+
+        document.getElementById(
+            "seconds"
+        ).innerText = "0";
+
 
         return;
 
@@ -1531,128 +1934,117 @@ function countdown(){
     const days =
         Math.floor(
             difference /
-            (1000 * 60 * 60 * 24)
+            (1000*60*60*24)
         );
 
 
     const hours =
         Math.floor(
-            (difference %
-            (1000 * 60 * 60 * 24))
-            /
-            (1000 * 60 * 60)
+            (
+                difference %
+                (1000*60*60*24)
+            ) /
+            (1000*60*60)
         );
 
 
     const minutes =
         Math.floor(
-            (difference %
-            (1000 * 60 * 60))
-            /
-            (1000 * 60)
+            (
+                difference %
+                (1000*60*60)
+            ) /
+            (1000*60)
         );
 
 
     const seconds =
         Math.floor(
-            (difference %
-            (1000 * 60))
-            /
+            (
+                difference %
+                (1000*60)
+            ) /
             1000
         );
 
 
-    document.getElementById("days")
-        .innerText =
-        String(days).padStart(2,"0");
+    document.getElementById(
+        "days"
+    ).innerText = days;
 
 
-    document.getElementById("hours")
-        .innerText =
-        String(hours).padStart(2,"0");
+    document.getElementById(
+        "hours"
+    ).innerText = hours;
 
 
-    document.getElementById("minutes")
-        .innerText =
-        String(minutes).padStart(2,"0");
+    document.getElementById(
+        "minutes"
+    ).innerText = minutes;
 
 
-    document.getElementById("seconds")
-        .innerText =
-        String(seconds).padStart(2,"0");
+    document.getElementById(
+        "seconds"
+    ).innerText = seconds;
 
 }
 
 
-countdown();
+updateCountdown();
 
 setInterval(
-    countdown,
+    updateCountdown,
     1000
 );
 
 
-/* ======================================================
-   4. СҮРӨТТҮ ЧОҢОЙТУУ
-====================================================== */
+/* ==================================================
+   LIGHTBOX
+================================================== */
 
-function showImage(imagePath){
+function openLightbox(url){
 
     const lightbox =
-        document.getElementById("lightbox");
+        document.getElementById(
+            "lightbox"
+        );
+
 
     const image =
-        document.getElementById("bigImage");
+        document.getElementById(
+            "lightboxImage"
+        );
 
 
-    image.src =
-        imagePath;
+    image.src = url;
 
 
     lightbox.classList.add(
-        "active"
+        "show"
     );
 
 }
 
 
-function closeImage(){
+function closeLightbox(){
 
     document
-        .getElementById("lightbox")
-        .classList.remove(
-            "active"
-        );
+        .getElementById(
+            "lightbox"
+        )
+        .classList
+        .remove("show");
 
 }
 
 
-/* ======================================================
-   5. ESC БАСЫЛСА СҮРӨТ ЖАБЫЛАТ
-====================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.key === "Escape"
-        ){
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-/* ======================================================
-   6. SCROLL АНИМАЦИЯ
-====================================================== */
+/* ==================================================
+   SCROLL ANIMATION
+================================================== */
 
 const observer =
     new IntersectionObserver(
+
         function(entries){
 
             entries.forEach(
@@ -1664,7 +2056,7 @@ const observer =
 
                         entry.target
                             .classList
-                            .add("show");
+                            .add("visible");
 
                     }
 
@@ -1672,14 +2064,18 @@ const observer =
             );
 
         },
+
         {
-            threshold:0.1
+            threshold:0.12
         }
+
     );
 
 
 document
-    .querySelectorAll(".reveal")
+    .querySelectorAll(
+        ".reveal"
+    )
     .forEach(
         function(element){
 
@@ -1691,54 +2087,24 @@ document
     );
 
 
-/* ======================================================
-   7. СҮРӨТТӨРДҮ ТЕКШЕРҮҮ
-====================================================== */
+/* ==================================================
+   ERROR
+================================================== */
 
-/*
-   Эгер сүрөт GitHub'да жок болсо,
-   экранда broken image чыгат.
-*/
+function showError(message){
 
-document
-    .querySelectorAll("img")
-    .forEach(
-        function(image){
+    console.error(message);
 
-            image.addEventListener(
-                "error",
-                function(){
-
-                    console.log(
-                        "Сүрөт табылган жок:",
-                        image.src
-                    );
-
-                }
-            );
-
-        }
-    );
+}
 
 
-/* ======================================================
-   8. МУЗЫК ФАЙЛЫН ТЕКШЕРҮҮ
-====================================================== */
+/* ==================================================
+   БАШТОО
+================================================== */
 
-document
-    .getElementById("weddingMusic")
-    .addEventListener(
-        "error",
-        function(){
-
-            console.log(
-                "Nelya-Kyz-uzatuu.mp3 табылган жок."
-            );
-
-        }
-    );
+loadGitHubFiles();
 
 </script>
 
 </body>
-  </html>
+</html>
